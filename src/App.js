@@ -91,15 +91,18 @@ function App() {
       ) : (
         <div className="form-container">
           {!userHasPin ? (
-            <form onSubmit={submitForm}>
-              <input
-                placeholder="Insert your number"
-                type="input"
-                value={val}
-                onChange={setValue}
-              />
-              <button type="submit">Submit</button>
-            </form>
+            <>
+              <h3>Enter your phone number</h3>
+              <form onSubmit={submitForm}>
+                <input
+                  placeholder="Insert your number"
+                  type="input"
+                  value={val}
+                  onChange={setValue}
+                />
+                <button type="submit">Submit</button>
+              </form>
+            </>
           ) : (
             <>
               {error ? (
@@ -111,7 +114,7 @@ function App() {
                 <div>{verified ? <p>✅ Thank you! Your number has been verified</p> : <></>}</div>
               ) : (
                 <form onSubmit={submitPinForm}>
-                <p>Awesome! We already have inserted your pin for you, please submit.</p>
+                <p>Awesome! We have already inserted your pin for you, please submit.</p>
                 <input
                   placeholder="Insert your PIN"
                   type="input"
